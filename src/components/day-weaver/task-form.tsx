@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useForm } from 'react-hook-form';
@@ -20,7 +21,9 @@ const taskSchema = z.object({
   estimatedTime: z.coerce.number().int().min(1, 'Estimated time must be at least 1 minute.'),
   priority: z.enum(['low', 'medium', 'high']),
   deadlineDate: z.date({ required_error: 'Deadline date is required.' }),
-  deadlineTime: z.string().regex(/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/, "Invalid time format (HH:mm)."),
+  deadlineHour: z.coerce.number().min(1).max(12),
+  deadlineMinute: z.coerce.number().min(0).max(59),
+  deadlinePeriod: z.enum(['AM', 'PM']),
 });
 
 type TaskFormValues = z.infer<typeof taskSchema>;
@@ -36,14 +39,22 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
       description: '',
       estimatedTime: 30,
       priority: 'medium',
-      deadlineTime: "17:00",
+      deadlineHour: 5,
+      deadlineMinute: 0,
+      deadlinePeriod: 'PM',
     },
   });
 
   function onSubmit(values: TaskFormValues) {
-    const [hours, minutes] = values.deadlineTime.split(':').map(Number);
+    let hours = values.deadlineHour;
+    if (values.deadlinePeriod === 'PM' && hours < 12) {
+      hours += 12;
+    }
+    if (values.deadlinePeriod === 'AM' && hours === 12) {
+      hours = 0;
+    }
     const deadline = new Date(values.deadlineDate);
-    deadline.setHours(hours, minutes);
+    deadline.setHours(hours, values.deadlineMinute);
 
     onAddTask({
       description: values.description,
@@ -107,8 +118,8 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
             )}
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <FormField
+        <div className="grid grid-cols-2 gap-4">
+          <FormField
             control={form.control}
             name="deadlineDate"
             render={({ field }) => (
@@ -118,20 +129,57 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
                     <FormMessage />
                 </FormItem>
             )}
-            />
-            <FormField
-              control={form.control}
-              name="deadlineTime"
-              render={({ field }) => (
-                <FormItem className='flex flex-col'>
-                  <FormLabel>Time</FormLabel>
-                  <FormControl>
-                    <Input type="time" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+          />
+          <div className="flex flex-col">
+              <FormLabel>Time</FormLabel>
+              <div className="flex items-center gap-2">
+                <FormField
+                  control={form.control}
+                  name="deadlineHour"
+                  render={({ field }) => (
+                    <FormItem className="flex-1">
+                      <FormControl>
+                        <Input type="number" min="1" max="12" {...field} />
+                      </FormControl>
+                      <FormMessage/>
+                    </FormItem>
+                  )}
+                />
+                <span className="font-bold">:</span>
+                <FormField
+                  control={form.control}
+                  name="deadlineMinute"
+                  render={({ field }) => (
+                    <FormItem className="flex-1">
+                      <FormControl>
+                        <Input type="number" min="0" max="59" {...field} />
+                      </FormControl>
+                      <FormMessage/>
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="deadlinePeriod"
+                  render={({ field }) => (
+                    <FormItem>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="AM">AM</SelectItem>
+                          <SelectItem value="PM">PM</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage/>
+                    </FormItem>
+                  )}
+                />
+              </div>
+          </div>
         </div>
         <Button type="submit" className="w-full">
           <PlusCircle className="mr-2 h-4 w-4" />
