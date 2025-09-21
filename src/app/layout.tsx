@@ -26,6 +26,9 @@ export default function RootLayout({
 </script>
       </head>
       <body className={cn("font-body antialiased", "min-h-screen bg-background font-sans")}>
+        <amp-auto-ads type="adsense"
+          data-ad-client="ca-pub-4407667957128270">
+        </amp-auto-ads>
         {children}
         <Toaster />
       </body>
