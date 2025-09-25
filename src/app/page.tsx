@@ -136,6 +136,8 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
+          <script async={true} data-cfasync="false" src="//pl27721433.revenuecpmgate.com/80a33e39f821ee1923e631904509e739/invoke.js"></script>
+          <div id="container-80a33e39f821ee1923e631904509e739"></div>
         </main>
       </div>
     </DndContext>
