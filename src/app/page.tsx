@@ -14,6 +14,7 @@ import ProgressTracker from '@/components/day-weaver/progress-tracker';
 import ScheduleTimeline from '@/components/day-weaver/schedule-timeline';
 import { DndContext, closestCenter, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
+import Script from 'next/script';
 
 
 export default function Home() {
@@ -136,8 +137,20 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-          <script async={true} data-cfasync="false" src="//pl27721433.revenuecpmgate.com/80a33e39f821ee1923e631904509e739/invoke.js"></script>
+          <Script async={true} data-cfasync="false" src="//pl27721433.revenuecpmgate.com/80a33e39f821ee1923e631904509e739/invoke.js"></Script>
           <div id="container-80a33e39f821ee1923e631904509e739"></div>
+          <Script id="e34ec0140d103f7bf543e7406ea44cbb-script">
+            {`
+              atOptions = {
+                'key' : 'e34ec0140d103f7bf543e7406ea44cbb',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+              };
+            `}
+          </Script>
+          <Script type="text/javascript" src="//www.highperformanceformat.com/e34ec0140d103f7bf543e7406ea44cbb/invoke.js"></Script>
         </main>
       </div>
     </DndContext>
