@@ -31,6 +31,7 @@ export default function RootLayout({
         </amp-auto-ads>
         {children}
         <Toaster />
+        <script type='text/javascript' src='//pl27721408.revenuecpmgate.com/5e/f8/6d/5ef86db68262f97a748ace5ea1c9ee88.js'></script>
       </body>
     </html>
   );
