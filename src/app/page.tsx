@@ -164,6 +164,19 @@ export default function Home() {
             `}
           </Script>
           <Script type="text/javascript" src="//recitalfinancially.com/14fcf04c7bab31e9d89208a88d9700c6/invoke.js"></Script>
+
+          <Script id="84552303026416b2360be526e1796ca4-script">
+            {`
+              atOptions = {
+                'key' : '84552303026416b2360be526e1796ca4',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+              };
+            `}
+          </Script>
+          <Script type="text/javascript" src="//recitalfinancially.com/84552303026416b2360be526e1796ca4/invoke.js"></Script>
         </main>
       </div>
     </DndContext>
