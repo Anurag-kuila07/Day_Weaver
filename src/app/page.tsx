@@ -14,6 +14,7 @@ import ProgressTracker from '@/components/day-weaver/progress-tracker';
 import ScheduleTimeline from '@/components/day-weaver/schedule-timeline';
 import { DndContext, closestCenter, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
+import Script from 'next/script';
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -102,6 +103,23 @@ export default function Home() {
           <div className="my-4">
             <script async="async" data-cfasync="false" src="//pickignoranceattacks.com/80a33e39f821ee1923e631904509e739/invoke.js"></script>
             <div id="container-80a33e39f821ee1923e631904509e739"></div>
+          </div>
+          <div className="my-4">
+            <Script id="ad-script-2" strategy="lazyOnload">
+              {`
+                atOptions = {
+                  'key' : 'e34ec0140d103f7bf543e7406ea44cbb',
+                  'format' : 'iframe',
+                  'height' : 50,
+                  'width' : 320,
+                  'params' : {}
+                };
+              `}
+            </Script>
+            <Script
+              src="//pickignoranceattacks.com/e34ec0140d103f7bf543e7406ea44cbb/invoke.js"
+              strategy="lazyOnload"
+            />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
