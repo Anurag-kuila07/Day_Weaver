@@ -94,6 +94,10 @@ export default function Home() {
       <div className="flex flex-col min-h-screen">
         <AppHeader />
         <main className="flex-grow p-4 md:p-6 lg:p-8 container mx-auto">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold tracking-tight font-headline">Weave Your Perfect Day</h1>
+            <p className="mt-2 text-lg text-muted-foreground">Let our AI assistant organize your tasks into an optimized schedule, helping you stay focused and productive.</p>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div className="space-y-6">
               <Card>
