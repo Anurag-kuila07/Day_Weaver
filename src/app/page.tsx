@@ -98,6 +98,12 @@ export default function Home() {
             <h1 className="text-4xl font-bold tracking-tight font-headline">Weave Your Perfect Day</h1>
             <p className="mt-2 text-lg text-muted-foreground">Let our AI assistant organize your tasks into an optimized schedule, helping you stay focused and productive.</p>
           </div>
+
+          <div className="my-4">
+            <script async="async" data-cfasync="false" src="//pickignoranceattacks.com/80a33e39f821ee1923e631904509e739/invoke.js"></script>
+            <div id="container-80a33e39f821ee1923e631904509e739"></div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div className="space-y-6">
               <Card>
