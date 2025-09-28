@@ -14,8 +14,6 @@ import ProgressTracker from '@/components/day-weaver/progress-tracker';
 import ScheduleTimeline from '@/components/day-weaver/schedule-timeline';
 import { DndContext, closestCenter, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
-import Script from 'next/script';
-
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -137,46 +135,6 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-          <Script async={true} data-cfasync="false" src="//pl27721433.revenuecpmgate.com/80a33e39f821ee1923e631904509e739/invoke.js"></Script>
-          <div id="container-80a33e39f821ee1923e631904509e739"></div>
-          <Script id="e34ec0140d103f7bf543e7406ea44cbb-script">
-            {`
-              atOptions = {
-                'key' : 'e34ec0140d103f7bf543e7406ea44cbb',
-                'format' : 'iframe',
-                'height' : 50,
-                'width' : 320,
-                'params' : {}
-              };
-            `}
-          </Script>
-          <Script type="text/javascript" src="//www.highperformanceformat.com/e34ec0140d103f7bf543e7406ea44cbb/invoke.js"></Script>
-          
-          <Script id="14fcf04c7bab31e9d89208a88d9700c6-script">
-            {`
-              atOptions = {
-                'key' : '14fcf04c7bab31e9d89208a88d9700c6',
-                'format' : 'iframe',
-                'height' : 600,
-                'width' : 160,
-                'params' : {}
-              };
-            `}
-          </Script>
-          <Script type="text/javascript" src="//recitalfinancially.com/14fcf04c7bab31e9d89208a88d9700c6/invoke.js"></Script>
-
-          <Script id="84552303026416b2360be526e1796ca4-script">
-            {`
-              atOptions = {
-                'key' : '84552303026416b2360be526e1796ca4',
-                'format' : 'iframe',
-                'height' : 60,
-                'width' : 468,
-                'params' : {}
-              };
-            `}
-          </Script>
-          <Script type="text/javascript" src="//recitalfinancially.com/84552303026416b2360be526e1796ca4/invoke.js"></Script>
         </main>
       </div>
     </DndContext>
