@@ -121,23 +121,6 @@ export default function Home() {
               strategy="lazyOnload"
             />
           </div>
-          <div className="my-4">
-            <Script id="ad-script-3" strategy="lazyOnload">
-              {`
-                atOptions = {
-                  'key' : '84552303026416b2360be526e1796ca4',
-                  'format' : 'iframe',
-                  'height' : 60,
-                  'width' : 468,
-                  'params' : {}
-                };
-              `}
-            </Script>
-            <Script
-              src="//pickignoranceattacks.com/84552303026416b2360be526e1796ca4/invoke.js"
-              strategy="lazyOnload"
-            />
-          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div className="space-y-6">
