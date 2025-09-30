@@ -11,7 +11,7 @@ import AppHeader from '@/components/day-weaver/header';
 import TaskForm from '@/components/day-weaver/task-form';
 import TaskList from '@/components/day-weaver/task-list';
 import ProgressTracker from '@/components/day-weaver/progress-tracker';
-import ScheduleCalendar from '@/components/day-weaver/schedule-calendar';
+import ScheduleTimeline from '@/components/day-weaver/schedule-timeline';
 import { DndContext, closestCenter, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import Script from 'next/script';
@@ -137,7 +137,7 @@ export default function Home() {
             <Card className="lg:sticky lg:top-8">
               <CardContent className="p-6">
                 <h2 className="text-2xl font-bold mb-4 font-headline">Optimized Schedule</h2>
-                <ScheduleCalendar schedule={schedule} tasks={tasks} />
+                <ScheduleTimeline schedule={schedule} tasks={tasks} />
               </CardContent>
             </Card>
           </div>
