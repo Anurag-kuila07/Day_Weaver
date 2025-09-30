@@ -11,7 +11,7 @@ import AppHeader from '@/components/day-weaver/header';
 import TaskForm from '@/components/day-weaver/task-form';
 import TaskList from '@/components/day-weaver/task-list';
 import ProgressTracker from '@/components/day-weaver/progress-tracker';
-import ScheduleTimeline from '@/components/day-weaver/schedule-timeline';
+import ScheduleCalendar from '@/components/day-weaver/schedule-calendar';
 import { DndContext, closestCenter, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import Script from 'next/script';
@@ -43,7 +43,7 @@ export default function Home() {
   };
 
   const handleOptimizeSchedule = async () => {
-    if (tasks.length === 0) {
+    if (tasks.filter(t => !t.completed).length === 0) {
       toast({
         title: 'No tasks to schedule',
         description: 'Please add some tasks before optimizing.',
@@ -113,7 +113,7 @@ export default function Home() {
                 <CardContent className="p-6">
                   <div className="flex justify-between items-center mb-4">
                     <h2 className="text-2xl font-bold font-headline">Your Tasks</h2>
-                    <Button onClick={handleOptimizeSchedule} disabled={isLoading || tasks.length === 0}>
+                    <Button onClick={handleOptimizeSchedule} disabled={isLoading || tasks.filter(t => !t.completed).length === 0}>
                       {isLoading ? (
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                       ) : (
@@ -137,7 +137,7 @@ export default function Home() {
             <Card className="lg:sticky lg:top-8">
               <CardContent className="p-6">
                 <h2 className="text-2xl font-bold mb-4 font-headline">Optimized Schedule</h2>
-                <ScheduleTimeline schedule={schedule} tasks={tasks} />
+                <ScheduleCalendar schedule={schedule} tasks={tasks} />
               </CardContent>
             </Card>
           </div>
