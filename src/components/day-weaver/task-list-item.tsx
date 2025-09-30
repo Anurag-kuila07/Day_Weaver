@@ -74,7 +74,7 @@ export default function TaskListItem({ task, onUpdateTask, onDeleteTask }: TaskL
           {task.description}
         </label>
         <div className="text-xs text-muted-foreground flex items-center gap-2">
-          <span>{format(task.deadline, 'MMM d, h:mm a')}</span>
+          <span>{format(task.deadline, 'dd/MM/yyyy, h:mm a')}</span>
           {isDeadlineSoon && !task.completed && (
             <TooltipProvider>
               <Tooltip>

@@ -1,4 +1,5 @@
 import AppHeader from '@/components/day-weaver/header';
+import { format } from 'date-fns';
 
 export default function PrivacyPolicyPage() {
   return (
@@ -8,7 +9,7 @@ export default function PrivacyPolicyPage() {
         <div className="prose dark:prose-invert max-w-4xl mx-auto">
           <h1>Privacy Policy for Day Weaver</h1>
 
-          <p><strong>Last Updated:</strong> {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <p><strong>Last Updated:</strong> {format(new Date(), 'dd/MM/yyyy')}</p>
 
           <p>
             Welcome to Day Weaver ("we," "our," "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our application.
