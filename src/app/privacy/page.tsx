@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
           <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
 
           <h2>7. Contact Us</h2>
-          <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:privacy@dayweaver.com">privacy@dayweaver.com</a>.</p>
+          <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:privacy@jaapcounter.info">privacy@jaapcounter.info</a>.</p>
         </div>
       </main>
     </div>

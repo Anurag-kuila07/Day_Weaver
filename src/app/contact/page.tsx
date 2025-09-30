@@ -14,7 +14,7 @@ export default function ContactPage() {
           <p>
             For general inquiries, feedback, or support, please email us at:
             <br />
-            <a href="mailto:contact@dayweaver.com">contact@dayweaver.com</a>
+            <a href="mailto:contact@jaapcounter.info">contact@jaapcounter.info</a>
           </p>
           <p>
             We do our best to respond to all inquiries within 48 business hours.
